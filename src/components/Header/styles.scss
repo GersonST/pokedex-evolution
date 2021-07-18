@@ -1,0 +1,13 @@
+.main-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: coral;
+  height: 50px;
+
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  color: white;
+}

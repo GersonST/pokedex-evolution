@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import List from "../../components/List";
 import { useHistory } from "react-router-dom";
+import "./styles.scss";
 
 const Home = () => {
   const history = useHistory();
@@ -12,9 +13,9 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <div>
-        <form action="">
+    <div className="home">
+      <div className="form-container">
+        <form className="form-pokemon">
           <input
             type="text"
             placeholder="ex: pikachu"
@@ -23,7 +24,9 @@ const Home = () => {
             }}
           />
 
-          <button onClick={handleSubmit}>Procurar</button>
+          <button className="btn-search" onClick={handleSubmit}>
+            Procurar
+          </button>
         </form>
       </div>
 

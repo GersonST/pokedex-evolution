@@ -11,7 +11,7 @@ const List = () => {
       await axios
         .get("https://pokeapi.co/api/v2/pokemon/", {
           params: {
-            limit: 151,
+            limit: 890,
           },
         })
         .then((response) => {
