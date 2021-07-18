@@ -20,21 +20,42 @@ const ViewPokemon = () => {
 
   return (
     <div className="PokemonView">
-      <h1>{pokemon.name}</h1>
-      <img
-        src={
-          `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/` +
-          pokemon.id +
-          `.png`
-        }
-        alt={pokemon.name}
-      />
-      Abilities
-      <ul className="PokemonView__abilities">
-        {pokemon.abilities.map((item) => (
-          <li>{item.ability.name}</li>
-        ))}
-      </ul>
+      {pokemon && (
+        <div className="view-container">
+          <h1>{pokemon.name}</h1>
+          <h2>Nº {pokemon.id}</h2>
+          <img
+            src={
+              `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/` +
+              pokemon.id +
+              `.png`
+            }
+            alt=""
+          />
+          {pokemon.types.map((poketype) => {
+            return <p key={poketype.type.name}>{poketype.type.name}</p>;
+          })}
+
+          {pokemon.stats.map((pokestats) => {
+            return (
+              <p key={pokestats.stat.name}>
+                {pokestats.stat.name}: {pokestats.base_stat}
+              </p>
+            );
+          })}
+
+          <p>{pokemon.height / 10}m</p>
+          <p>{pokemon.weight / 10}kg</p>
+
+          {pokemon.abilities.map((pokeabilities) => {
+            return (
+              <p key={pokeabilities.ability.name}>
+                {pokeabilities.ability.name}
+              </p>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

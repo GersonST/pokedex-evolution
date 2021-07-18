@@ -7,10 +7,16 @@ const List = () => {
 
   useEffect(() => {
     const getListPokemons = async () => {
-      await axios.get("https://pokeapi.co/api/v2/pokemon/").then((response) => {
-        console.log(response.data.results);
-        setPokemonArray(response.data.results);
-      });
+      await axios
+        .get("https://pokeapi.co/api/v2/pokemon/", {
+          params: {
+            limit: 151,
+          },
+        })
+        .then((response) => {
+          console.log(response.data.results);
+          setPokemonArray(response.data.results);
+        });
     };
     getListPokemons();
   }, []);
@@ -19,10 +25,21 @@ const List = () => {
     <div>
       <h1>List</h1>
       <ul>
-        {pokemonArray.map(({ name }) => {
+        {pokemonArray.map(({ name }, index) => {
           return (
-            <Link to={`${name}`}>
-              <li key={name}>{name}</li>
+            <Link to={`${name}`} key={name + index}>
+              <li key={name}>
+                {name} {index + 1}
+              </li>
+              <img
+                src={
+                  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/` +
+                  `${index + 1}` +
+                  `.png`
+                }
+                alt={name}
+                key={index}
+              />
             </Link>
           );
         })}
