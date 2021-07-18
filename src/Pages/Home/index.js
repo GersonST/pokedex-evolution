@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import List from "../../components/List";
 import { useHistory } from "react-router-dom";
-import "./styles.scss";
 
 const Home = () => {
   const history = useHistory();
