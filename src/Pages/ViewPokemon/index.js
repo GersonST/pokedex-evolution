@@ -23,13 +23,9 @@ const ViewPokemon = () => {
       {pokemon && (
         <div className="view-container">
           <h1>{pokemon.name}</h1>
-          <h2>Nº {pokemon.id}</h2>
+          <h2># {pokemon.id}</h2>
           <img
-            src={
-              `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/` +
-              pokemon.id +
-              `.png`
-            }
+            src={pokemon.sprites.other["official-artwork"].front_default}
             alt=""
           />
           {pokemon.types.map((poketype) => {

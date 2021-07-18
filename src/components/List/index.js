@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./styles.scss";
 
 const List = () => {
   const [pokemonArray, setPokemonArray] = useState([]);
@@ -22,24 +23,35 @@ const List = () => {
   }, []);
 
   return (
-    <div>
-      <h1>List</h1>
-      <ul>
+    <div className="card-container">
+      <ul className="list-container">
         {pokemonArray.map(({ name }, index) => {
           return (
-            <Link to={`${name}`} key={name + index}>
-              <li key={name}>
-                {name} {index + 1}
-              </li>
-              <img
-                src={
-                  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/` +
-                  `${index + 1}` +
-                  `.png`
-                }
-                alt={name}
-                key={index}
-              />
+            <Link
+              to={`${name}`}
+              key={name + index}
+              style={{ textDecoration: "none" }}
+            >
+              <div className="card">
+                <div className="info-card">
+                  <p className="pokemon-id">#{index + 1}</p>
+                  <li className="pokemon-list" key={name}>
+                    {name}
+                  </li>
+                </div>
+                <div className="image-container">
+                  <img
+                    src={
+                      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/` +
+                      `${index + 1}` +
+                      `.png`
+                    }
+                    alt={name}
+                    key={index}
+                    className="pokemon-image"
+                  />
+                </div>
+              </div>
             </Link>
           );
         })}
