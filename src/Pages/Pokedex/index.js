@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import List from "../../components/List";
-import { useHistory } from "react-router-dom";
 import SearchBox from "../../components/SearchBox";
 import axios from "axios";
 import { CardPokemon } from "./../../components/CardPokemon/index";
@@ -8,9 +6,9 @@ import { CardPokemon } from "./../../components/CardPokemon/index";
 const Pokedex = () => {
   const NUMBER_POKEMONS = 9;
   const NUMBER_MAX_POKEMONS_API = 750;
-  const history = useHistory();
+
   const [pokemons, setPokemons] = useState([]);
-  const [namePokemon, setNamePokemon] = useState("");
+
   const [pokemonSearch, setPokemonSearch] = useState("");
   const [pokemonsOffsetApi, setPokemonsOffsetApi] = useState(NUMBER_POKEMONS);
 
@@ -68,11 +66,6 @@ const Pokedex = () => {
     },
     [NUMBER_POKEMONS]
   );
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    history.push(`/pokedex/${namePokemon}`);
-  };
 
   return (
     <div className="home">

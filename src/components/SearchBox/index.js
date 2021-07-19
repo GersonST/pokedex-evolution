@@ -1,15 +1,4 @@
-import React, { useState, useCallback } from "react";
-import { useHistory } from "react-router-dom";
-
 const SearchBox = ({ value, onChange }) => {
-  const history = useHistory();
-  const [namePokemon, setNamePokemon] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    history.push(`/pokedex/${namePokemon}`);
-  };
-
   return (
     <div className="home">
       <div className="form-container">
@@ -22,10 +11,6 @@ const SearchBox = ({ value, onChange }) => {
               onChange(e.target.value);
             }}
           />
-
-          <button className="btn-search" onClick={handleSubmit}>
-            Procurar
-          </button>
         </form>
       </div>
     </div>

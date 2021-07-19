@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useTheme } from "styled-components";
-import iconTypePokemon from "../../assets/types";
+
 import { Link } from "react-router-dom";
 
 export const CardPokemon = ({ name }) => {
@@ -23,7 +23,6 @@ export const CardPokemon = ({ name }) => {
 
           return {
             name: typeName,
-            icon: iconTypePokemon,
             color: colors.type,
           };
         }),
@@ -32,7 +31,7 @@ export const CardPokemon = ({ name }) => {
   }, [name, colors]);
 
   return (
-    <Link to={`${name}`} color={pokemon.backgroundColor}>
+    <Link to={`pokedex/${name}`} color={pokemon.backgroundColor}>
       <div className="pokemon">
         <p>#{pokemon.id}</p>
         <h2>{name}</h2>
@@ -40,7 +39,11 @@ export const CardPokemon = ({ name }) => {
           <div>
             {pokemon.type.map((pokemonType) => (
               <div color={pokemonType.color} key={pokemonType.name}>
-                {pokemonType.icon} <span>{pokemonType.name}</span>
+                <img
+                  src={`${process.env.PUBLIC_URL}/assets/images/${pokemonType.name}.png`}
+                  alt=""
+                />
+                <span>{pokemonType.name}</span>
               </div>
             ))}
           </div>
