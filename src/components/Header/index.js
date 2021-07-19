@@ -3,18 +3,28 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className="main-header">
+    <header className="main-header">
       <Link
         to="/"
         style={{
           textDecoration: "none",
-          color: "white",
+          color: "black",
           fontSize: "30px",
         }}
       >
         Home
       </Link>
+      <Link
+        to="/pokedex"
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "30px",
+        }}
+      >
+        Pokedex
+      </Link>
       <h1>Pokedex</h1>
-    </div>
+    </header>
   );
 }

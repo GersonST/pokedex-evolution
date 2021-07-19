@@ -10,7 +10,7 @@ const List = () => {
       await axios
         .get("https://pokeapi.co/api/v2/pokemon/", {
           params: {
-            limit: 890,
+            limit: 151,
           },
         })
         .then((response) => {
@@ -27,7 +27,7 @@ const List = () => {
         {pokemonArray.map(({ name }, index) => {
           return (
             <Link
-              to={`${name}`}
+              to={`/pokedex/${name}`}
               key={name + index}
               style={{ textDecoration: "none" }}
             >
