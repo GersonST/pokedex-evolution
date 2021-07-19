@@ -1,41 +1,41 @@
 import React from "react";
 
-import { ReactComponent as TypeBug } from "./bug.svg";
-import { ReactComponent as TypeDark } from "./dark.svg";
-import { ReactComponent as TypeDragon } from "./dragon.svg";
-import { ReactComponent as TypeElectric } from "./electric.svg";
-import { ReactComponent as TypeFairy } from "./fairy.svg";
-import { ReactComponent as TypeFighting } from "./fighting.svg";
-import { ReactComponent as TypeFire } from "./fire.svg";
-import { ReactComponent as TypeFlying } from "./flying.svg";
-import { ReactComponent as TypeGhost } from "./ghost.svg";
-import { ReactComponent as TypeGrass } from "./grass.svg";
-import { ReactComponent as TypeGround } from "./ground.svg";
-import { ReactComponent as TypeIce } from "./ice.svg";
-import { ReactComponent as TypeNormal } from "./normal.svg";
-import { ReactComponent as TypePoison } from "./poison.svg";
-import { ReactComponent as TypePsychic } from "./psychic.svg";
-import { ReactComponent as TypeRock } from "./rock.svg";
-import { ReactComponent as TypeSteel } from "./steel.svg";
-import { ReactComponent as TypeWater } from "./water.svg";
+import bug from "./bug.svg";
+import dark from "./dark.svg";
+import dragon from "./dragon.svg";
+import electric from "./electric.svg";
+import fairy from "./fairy.svg";
+import fighting from "./fighting.svg";
+import fire from "./fire.svg";
+import flying from "./flying.svg";
+import ghost from "./ghost.svg";
+import grass from "./grass.svg";
+import ground from "./ground.svg";
+import ice from "./ice.svg";
+import normal from "./normal.svg";
+import poison from "./poison.svg";
+import psychic from "./psychic.svg";
+import rock from "./rock.svg";
+import steel from "./steel.svg";
+import water from "./water.svg";
 
-export default {
-  bug: <TypeBug />,
-  dark: <TypeDark />,
-  dragon: <TypeDragon />,
-  electric: <TypeElectric />,
-  fairy: <TypeFairy />,
-  fighting: <TypeFighting />,
-  fire: <TypeFire />,
-  flying: <TypeFlying />,
-  ghost: <TypeGhost />,
-  grass: <TypeGrass />,
-  ground: <TypeGround />,
-  ice: <TypeIce />,
-  normal: <TypeNormal />,
-  poison: <TypePoison />,
-  psychic: <TypePsychic />,
-  rock: <TypeRock />,
-  steel: <TypeSteel />,
-  water: <TypeWater />,
-};
+export default [
+  bug,
+  dark,
+  dragon,
+  electric,
+  fairy,
+  fighting,
+  fire,
+  flying,
+  ghost,
+  grass,
+  ground,
+  ice,
+  normal,
+  poison,
+  psychic,
+  rock,
+  steel,
+  water,
+];
