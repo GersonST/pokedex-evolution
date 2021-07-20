@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 export const HeaderPokemon = styled.header`
   display: flex;
-  justify-content: space-between;
-  height: 93px;
+  justify-content: space-around;
+  height: 10vh;
   align-items: center;
+  box-shadow: 0px 4px 16px grey;
 
   background-color: ${({ theme }) => theme.colors.background.header};
 `;
@@ -16,7 +17,7 @@ export const HeaderLinks = styled(Link)`
   line-height: 29px;
   margin-right: 100px;
   > img {
-    margin-left: 100px;
+    margin-left: 80px;
     width: 160px;
   }
 `;

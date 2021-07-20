@@ -1,6 +1,7 @@
 import React from "react";
-import Banner from "../../assets/images/banner.png";
+import banner from "../../assets/images/banner.png";
 import { useHistory } from "react-router-dom";
+import { Main, TextWrapper, Banner } from "./styles";
 
 const Home = () => {
   const history = useHistory();
@@ -15,19 +16,21 @@ const Home = () => {
   };
 
   return (
-    <main className="home">
-      <div className="text-wrapper">
-        <h1>Find all your favorite Pokemon</h1>
+    <Main>
+      <TextWrapper>
+        <h1>
+          <span>Find</span> all your favorite <span>Pokemon</span>
+        </h1>
         <h2>
           You can know the type of Pokemon, its strengths, disavantages and
           abilities
         </h2>
         <button onClick={handleRandomPokemon}>Try your Lucky</button>
-        <div className="banner">
-          <img src={Banner} alt="Banner do Pikachu" />
-        </div>
-      </div>
-    </main>
+      </TextWrapper>
+      <Banner>
+        <img src={banner} alt="Banner do Pikachu" />
+      </Banner>
+    </Main>
   );
 };
 
