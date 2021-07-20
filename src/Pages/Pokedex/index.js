@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import SearchBox from "../../components/SearchBox";
 import axios from "axios";
 import { CardPokemon } from "./../../components/CardPokemon/index";
-import { Pokemons } from "./styles";
+import { Pokemons, PokedexWrapper, Search, ButtonMore } from "./styles";
 
 const Pokedex = () => {
   const NUMBER_POKEMONS = 9;
@@ -69,10 +69,10 @@ const Pokedex = () => {
   );
 
   return (
-    <div className="home">
-      <div className="form-container">
+    <PokedexWrapper>
+      <Search>
         <SearchBox value={pokemonSearch} onChange={setPokemonSearch} />
-      </div>
+      </Search>
 
       <Pokemons>
         {pokemons.map((pokemon) => (
@@ -81,14 +81,14 @@ const Pokedex = () => {
       </Pokemons>
 
       {pokemonSearch.length <= 2 && (
-        <button
+        <ButtonMore
           type="button"
           onClick={() => handleMorePokemons(pokemonsOffsetApi)}
         >
-          CARREGAR MAIS
-        </button>
+          Load More
+        </ButtonMore>
       )}
-    </div>
+    </PokedexWrapper>
   );
 };
 

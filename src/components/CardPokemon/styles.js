@@ -19,11 +19,11 @@ export const Container = styled(Link)`
     right: 0px;
     top: -50px;
     z-index: 10;
-    height: 210px;
+
     width: 210px;
 
     -webkit-transition: -webkit-filter 400ms ease;
-    transition: all ease 2s;
+    transition: all ease 0.4s;
   }
 
   &:hover {
@@ -31,6 +31,7 @@ export const Container = styled(Link)`
     border-radius: 40px;
 
     bottom: 15px;
+    transition: all ease 1s;
     > img {
       filter: grayscale(0);
       top: -45px;
@@ -79,7 +80,7 @@ export const PokemonNumber = styled.span`
 `;
 
 export const PokemonName = styled.span`
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   line-height: 45px;
   text-transform: capitalize;
@@ -91,7 +92,7 @@ export const PokemonType = styled.div`
   flex-direction: row;
   align-items: center;
 
-  padding: 8px;
+  padding: 2px;
 
   background: ${(props) => props.color};
   border-radius: 3px;
@@ -101,7 +102,7 @@ export const PokemonType = styled.div`
   }
 
   img {
-    width: 100px;
+    width: 70px;
 
     path {
       fill: ${({ theme }) => theme.colors.text.white};
