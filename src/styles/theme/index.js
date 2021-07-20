@@ -47,6 +47,7 @@ const defaultTheme = {
       input: "#F2F2F2",
       pressedInput: "#E2E2E2",
       modal: "#000000",
+      header: "#F5DB13",
     },
     text: {
       white: "#FFFFFF",

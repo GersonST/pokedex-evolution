@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useTheme } from "styled-components";
 
-import { Link } from "react-router-dom";
+import {
+  PokemonType,
+  PokemonName,
+  Container,
+  Pokemon,
+  PokemonNumber,
+} from "./styles";
 
 export const CardPokemon = ({ name }) => {
   const { colors } = useTheme();
@@ -31,29 +37,26 @@ export const CardPokemon = ({ name }) => {
   }, [name, colors]);
 
   return (
-    <Link to={`pokedex/${name}`} color={pokemon.backgroundColor}>
-      <div className="pokemon">
-        <p>#{pokemon.id}</p>
-        <h2>{name}</h2>
+    <Container to={`pokedex/${name}`} color={pokemon.backgroundColor}>
+      <Pokemon>
+        <PokemonNumber>#{pokemon.id}</PokemonNumber>
+        <PokemonName>{name}</PokemonName>
         {pokemon.type && (
           <div>
             {pokemon.type.map((pokemonType) => (
-              <div color={pokemonType.color} key={pokemonType.name}>
+              <PokemonType color={pokemonType.color} key={pokemonType.name}>
                 <img
                   src={`${process.env.PUBLIC_URL}/assets/images/${pokemonType.name}.png`}
-                  alt=""
+                  alt={pokemonType.name}
                 />
-                <span>{pokemonType.name}</span>
-              </div>
+              </PokemonType>
             ))}
           </div>
         )}
-      </div>
-      <div className="pokemon-image">
-        {pokemon.image && (
-          <img src={pokemon.image} alt={`Imagem do pokémon ${name}`} />
-        )}
-      </div>
-    </Link>
+      </Pokemon>
+      {pokemon.image && (
+        <img src={pokemon.image} alt={`Imagem do pokémon ${name}`} />
+      )}
+    </Container>
   );
 };

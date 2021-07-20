@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import SearchBox from "../../components/SearchBox";
 import axios from "axios";
 import { CardPokemon } from "./../../components/CardPokemon/index";
+import { Pokemons } from "./styles";
 
 const Pokedex = () => {
   const NUMBER_POKEMONS = 9;
@@ -73,11 +74,11 @@ const Pokedex = () => {
         <SearchBox value={pokemonSearch} onChange={setPokemonSearch} />
       </div>
 
-      <div className="pokemon-cards">
+      <Pokemons>
         {pokemons.map((pokemon) => (
           <CardPokemon key={pokemon.name} name={pokemon.name} />
         ))}
-      </div>
+      </Pokemons>
 
       {pokemonSearch.length <= 2 && (
         <button

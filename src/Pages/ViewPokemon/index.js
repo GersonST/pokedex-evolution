@@ -28,7 +28,15 @@ const ViewPokemon = () => {
             alt=""
           />
           {pokemon.types.map((poketype) => {
-            return <p key={poketype.type.name}>{poketype.type.name}</p>;
+            return (
+              <div>
+                <img
+                  src={`${process.env.PUBLIC_URL}/assets/images/${poketype.type.name}.png`}
+                  alt={poketype.type.name}
+                  style={{ width: "100px" }}
+                />
+              </div>
+            );
           })}
 
           {pokemon.stats.map((pokestats) => {
