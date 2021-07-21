@@ -79,7 +79,7 @@ const Evolution = ({ name }) => {
               </EvolutionPokemon>
             )}
             <EvolutionPokemon>
-              <EvolutionPokemonImage to={`/pokemon/${evolves.name}`}>
+              <EvolutionPokemonImage to={`/pokedex/${evolves.name}`}>
                 <img
                   src={evolves.image}
                   alt={`Imagem do pokémon ${evolves.name}`}
