@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const PokedexWrapper = styled.div`
   padding: 0 70px 0 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const Search = styled.div`
@@ -20,12 +23,9 @@ export const Pokemons = styled.div`
 `;
 
 export const ButtonMore = styled.button`
-  display: flex;
-  position: relative;
-  justify-content: center;
   margin-top: 100px;
-  margin-left: 525px;
-  align-items: center;
+  align-self: center;
+
   margin-bottom: 90px;
 
   font-weight: 700;

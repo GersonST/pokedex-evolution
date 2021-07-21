@@ -4,7 +4,7 @@ export const Main = styled.main`
   display: flex;
   flex-direction: row;
   height: 90vh;
-  background-color: ${({ theme }) => theme.colors.backgroundType.dragon};
+  background: ${({ theme }) => theme.colors.backgroundType.steel};
 `;
 
 export const TextWrapper = styled.div`

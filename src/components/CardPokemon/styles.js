@@ -12,7 +12,7 @@ export const Container = styled(Link)`
   background: ${(props) => props.color};
   box-shadow: 1px 3px 12px 0 rgba(0, 0, 0, 0.3);
 
-  transition: all ease 2s;
+  transition: all ease 1s;
 
   > img {
     position: absolute;
@@ -102,7 +102,7 @@ export const PokemonType = styled.div`
   }
 
   img {
-    width: 70px;
+    width: 80px;
 
     path {
       fill: ${({ theme }) => theme.colors.text.white};
