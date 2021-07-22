@@ -5,8 +5,8 @@ import { CardPokemon } from "./../../components/CardPokemon/index";
 import { Pokemons, PokedexWrapper, Search, ButtonMore } from "./styles";
 
 const Pokedex = () => {
-  const NUMBER_POKEMONS = 9;
-  const NUMBER_MAX_POKEMONS_API = 750;
+  const NUMBER_POKEMONS = 27;
+  const NUMBER_MAX_POKEMONS_API = 850;
 
   const [pokemons, setPokemons] = useState([]);
 
